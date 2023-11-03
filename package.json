@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
+    "serve": "node --openssl-legacy-provider node_modules/.bin/vue-cli-service serve",
+    "build": "node --openssl-legacy-provider node_modules/.bin/vue-cli-service build",
+    "lint": "node --openssl-legacy-provider node_modules/.bin/vue-cli-service lint",
     "build:docs": "npm-run-all build:docs:design build:docs:develop",
     "build:docs:design": "markdown-toc -i DESIGNING_TUTORIALS.md",
     "build:docs:develop": "markdown-toc -i DEVELOPING_TUTORIALS.md",
@@ -19,7 +19,7 @@
     "scripts:build:data": "node scripts/commands/build-data",
     "scripts:googleapis-generate-token": "node scripts/commands/googleapis-generate-token",
     "scripts:wizard": "node scripts/commands/wizard/index.js",
-    "sitemap": "rm -f public/sitemap.xml && vue-cli-service sitemap",
+    "sitemap": "rm -f public/sitemap.xml && node --openssl-legacy-provider node_modules/.bin/vue-cli-service sitemap",
     "start": "npm run serve",
     "test": "start-server-and-test serve http://localhost:3000 cy:run",
     "test:jest": "jest --maxWorkers=1 --verbose"
